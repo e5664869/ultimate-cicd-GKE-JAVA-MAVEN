@@ -58,7 +58,9 @@ pipeline {
                     BUILD_NUMBER=${BUILD_NUMBER}
                     git remote set-url --push origin https://github.com/${GIT_USER_NAME}/${GIT_REPO_NAME}.git
                     sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml
-                    cd java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/
+                    ls -l 
+                    pwd
+                    #cd java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/
                     git add java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml
                     git commit -m "Update deployment image to version ${BUILD_NUMBER}"
                     git push  HEAD:main
