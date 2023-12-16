@@ -68,6 +68,7 @@ pipeline {
     }
   */
     stage('Deploy to GKE') {
+      agent any
       environment {
         PROJECT_ID = 'terraform-on-gcp-403504'
         CLUSTER_NAME = 'autopilot-cluster-2'
