@@ -63,7 +63,7 @@ pipeline {
                     #cd java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/
                     git add java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml
                     git commit -m "Update deployment image to version ${BUILD_NUMBER}"
-                    git push  HEAD:main
+                    git push  HEAD:main HEAD:main
                 '''
             }
         }
