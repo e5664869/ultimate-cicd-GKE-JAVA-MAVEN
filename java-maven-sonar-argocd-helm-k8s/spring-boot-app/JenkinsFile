@@ -50,6 +50,7 @@ pipeline {
             GIT_REPO_NAME = "ultimate-cicd-GKE-JAVA-MAVEN"
             GIT_USER_NAME = "e5664869"
         }
+/*
         steps {
             withCredentials([string(credentialsId: 'githubtocken', variable: 'GITHUB_TOKEN')]) {
                 sh '''
@@ -64,6 +65,7 @@ pipeline {
             }
         }
     }
+  */
     stage('Deploy to GKE') {
       environment {
         PROJECT_ID = 'terraform-on-gcp-403504'
