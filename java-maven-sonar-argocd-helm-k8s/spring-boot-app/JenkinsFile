@@ -75,7 +75,7 @@ pipeline {
         CREDENTIALS_ID = 'terraform-on-gcp'
       }
       steps{
-        sh "cp java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml $PWD/"
+        sh "cp java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml /data/worksapce/.jenkins/workspace/Ultimate-CICD/"
         step([$class: 'KubernetesEngineBuilder', projectId: env.PROJECT_ID, clusterName: env.CLUSTER_NAME, location: env.LOCATION, manifestPattern: 'deployment.yml', credentialsId: env.CREDENTIALS_ID, verifyDeployments: true])
       }
 
